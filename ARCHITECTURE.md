@@ -105,6 +105,19 @@ Artefacts:
 
 * Le plan est “complete” + preuves présentes dans `progress.md`
 
+**External dependency**
+
+The operator ε relies on the execution discipline defined in
+"planning-with-files" by Othman Adi.
+
+See:
+- https://github.com/OthmanAdi/planning-with-files
+- https://github.com/OthmanAdi/planning-with-files/blob/master/docs/quickstart.md
+
+This repository does not reimplement planning-with-files.
+It composes with it.
+
+
 ---
 
 ## Invariants (rendus explicites)
