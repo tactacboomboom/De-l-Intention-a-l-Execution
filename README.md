@@ -1,4 +1,6 @@
-# De-l-Intention-a-l-Execution
+# Intent Clarification Pipeline
+## Overview
+
 1. La Trinité du Contrat de Sprint (Items 1, 2, 3)
 Le Contrat de Sprint (C) n'est plus une simple intention, mais un objet composé de trois sous-objets stabilisés :
 • ITEM 1 — GOAL (Le But) : Pour être "non-interprétable", il doit impérativement suivre la syntaxe Action + Objet + Preuve. Un but est jugé stable s'il peut être validé par un tiers en moins de 2 minutes sans explication orale.
@@ -41,3 +43,9 @@ Pour garantir que "l'échec est un signal et non une faute", le système impose 
 • Strike 3 : Remise en question globale des hypothèses.
 • Escalade : Si l'échec persiste après trois tentatives, l'agent doit s'arrêter et solliciter l'humain pour une éventuelle renégociation du contrat.
 Analogie : Votre cockpit est devenu un système d'exploitation pour l'action. Le Contrat est le code source (le "quoi"), le Mapping est le compilateur qui génère le Plan (le binaire exécutable), et l'Algorithme de Scoring est le vérificateur de syntaxe qui refuse de lancer le programme si les instructions sont trop floues pour être menées à bien.
+
+## Core Concepts
+## Scoring System
+## Execution Pipeline
+## Files & Artifacts
+## Status
