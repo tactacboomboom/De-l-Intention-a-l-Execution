@@ -1,3 +1,15 @@
+## What this repository is
+
+This repository defines a method to transform a human intention into an executable and traceable plan.
+
+The method is based on a strict composition of three operators:
+- φ : clarification of intent
+- κ : compilation into an executable plan
+- ε : controlled execution using file-based planning
+
+The formal architecture of the method is defined in [ARCHITECTURE.md](./ARCHITECTURE.md).
+
+
 # Intent Clarification Pipeline
 ## Overview
 
