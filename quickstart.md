@@ -99,44 +99,47 @@ Action : Vérifier la complétion :
 (si vous utilisez les hooks, cela se fait automatiquement) :
 ./scripts/check-complete.sh
 
-Si ce n’est pas complet :
+**Si ce n’est pas complet** :
 Le hook d’arrêt (ou le script) empêche l’arrêt.
 Poursuivez le travail jusqu’à ce que toutes les phases soient terminées.
 
-Si c’est complet :
+**Si c’est complet** :
 Livrez votre travail !
 Les trois fichiers de planification documentent intégralement votre processus.
 ___
-Référence rapide : quand mettre à jour quel fichier
-┌─────────────────────────────────────────────────────────┐
-│  task_plan.md                                            │
-│  Mettre à jour lorsque :                                 │
-│  • La tâche commence (le créer en premier !)             │
-│  • Une phase est terminée (changement de statut)         │
-│  • Une décision majeure est prise                         │
-│  • Une erreur est rencontrée                              │
-│  • Relecture avant décision (automatique via hook)       │
-└─────────────────────────────────────────────────────────┘
+## Référence rapide : quand mettre à jour quel fichier
 
-┌─────────────────────────────────────────────────────────┐
-│  findings.md                                             │
-│  Mettre à jour lorsque :                                 │
-│  • Une découverte est faite (recherche, exploration)     │
-│  • Après 2 consultations (règle des 2 actions)           │
-│  • Une décision technique est prise (avec justification) │
-│  • Des ressources utiles sont trouvées (URLs, docs)      │
-│  • Des images ou PDF sont consultés (capturer en texte)  │
-└─────────────────────────────────────────────────────────┘
+### `task_plan.md`
 
-┌─────────────────────────────────────────────────────────┐
-│  progress.md                                             │
-│  Mettre à jour lorsque :                                 │
-│  • Une nouvelle phase commence (heure de début)          │
-│  • Une phase est terminée (actions, fichiers modifiés)   │
-│  • Des tests sont exécutés                                │
-│  • Des erreurs surviennent (journal + horodatage)        │
-│  • Reprise après une pause (test des 5 questions)        │
-└─────────────────────────────────────────────────────────┘
+Mettre à jour lorsque :
+- La tâche démarre (le créer en premier)
+- Une phase est terminée (changement de statut)
+- Une décision majeure est prise
+- Une erreur est rencontrée
+- Relecture avant décision (automatique via hook)
+
+---
+
+### `findings.md`
+
+Mettre à jour lorsque :
+- Une découverte est faite (recherche, exploration)
+- Après **2 consultations** navigateur/recherche (règle des 2 actions)
+- Une décision technique est prise (avec justification)
+- Des ressources utiles sont trouvées (URLs, documents)
+- Des images ou PDF sont consultés (capturer immédiatement en texte)
+
+---
+
+### `progress.md`
+
+Mettre à jour lorsque :
+- Une nouvelle phase commence (heure de début)
+- Une phase est terminée (actions réalisées, fichiers modifiés)
+- Des tests sont exécutés
+- Des erreurs surviennent (journal + horodatage)
+- Reprise après une pause (test des 5 questions)
+
 ___
 Erreurs courantes à éviter
 | À ne pas faire                                               | À faire à la place                                  |
