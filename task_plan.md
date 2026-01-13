@@ -1,16 +1,15 @@
-# Task Plan
+# Plan d’exécution — Sprint Langue (FR)
 
-## Goal
-See contrat/GOAL.md
+## Objectif
+Voir `contrat/GOAL.md`
 
 ## Phases
-- Phase 1: Audit linguistique (identifier tout ce qui n’est pas FR). — Status: pending
-- Phase 2: Définition du lexique canonique — Status: pending
-- Phase 3: Réécriture + harmonisation — Status: pending
-- Phase 4: Vérification finale + diff — Status: pending
+- Phase 1 : Audit linguistique complet du dépôt — Status: pending
+- Phase 2 : Définition et gel du lexique français canonique — Status: pending
+- Phase 3 : Traduction et harmonisation selon le lexique — Status: pending
 
-## Key Questions
+## Questions clés
 
-## Decisions Made
+## Décisions prises
 
-## Errors Encountered
+## Erreurs rencontrées
