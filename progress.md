@@ -56,3 +56,10 @@ Quel est le but ? → Voir contrat/GOAL.md
 Qu’ai-je appris ? → Voir findings.md
 
 Qu’ai-je fait ? → Architecture validated
+
+## Sprint closure
+
+- Sprint completed successfully.
+- All phases marked as complete.
+- Execution artifacts (findings, progress) frozen.
+- No further modification allowed for this sprint.
