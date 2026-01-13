@@ -142,3 +142,28 @@ It composes with it.
 * Spécification: `contrat/`
 * Plan: `task_plan.md`
 * Run logs: `findings.md`, `progress.md`
+
+## Stratification invariant
+
+This method is strictly stratified into four non-overlapping layers:
+
+1. Theory (`/theory`)
+   - Invariant documents defining the foundations of the method.
+   - Must not depend on any sprint, execution, or project-specific context.
+
+2. Architecture (`ARCHITECTURE.md`)
+   - Defines the operators φ, κ, ε and their composition.
+   - Bridges theory and execution.
+   - Changes rarely and deliberately.
+
+3. Execution (`task_plan.md`, `findings.md`, `progress.md`)
+   - Sprint-specific artifacts.
+   - Immutable once a sprint is closed.
+   - Record events, not rules.
+
+4. Instantiation (`/contrat`, `/examples`)
+   - Project- and sprint-specific realizations.
+   - Fully disposable and replaceable.
+
+Violation of this stratification invalidates the method.
+
