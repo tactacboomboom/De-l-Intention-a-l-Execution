@@ -1,5 +1,5 @@
 # GOAL
 
-Publish a public GitHub repository that documents the intent-clarification method,
-with a readable README and a validated architecture file,
-proved by the existence of the files in the main branch.
+Franciser intégralement le dépôt dans la branche sprint-langue-fr,
+sans modifier main,
+preuve par diff nul EN→FR sur l’ensemble des fichiers.
