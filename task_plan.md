@@ -13,3 +13,8 @@ Voir `contrat/GOAL.md`
 ## Décisions prises
 
 ## Erreurs rencontrées
+
+## Règle de discipline (Sprint Langue)
+
+Aucune traduction ou modification de contenu n’est autorisée
+tant que la Phase 1 (audit) n’est pas marquée comme complete.
