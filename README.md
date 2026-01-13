@@ -1,161 +1,236 @@
-## 📌 Source normative du dépôt
+# De l’Intention à l’Exécution
 
-La **source normative unique** de cette méthode est le dossier [`/theory`](./theory).
-
-Il contient :
-- les **définitions** formelles,
-- les **axiomes** non négociables,
-- les **règles opératoires**,
-- les **seuils et mesures de décision**.
-
-Tout autre document du dépôt (README, quickstart, exemples, templates, archives)
-est **dérivé**, **pédagogique** ou **historique**, et ne fait pas autorité
-en cas de divergence.
-
-Toute modification de la méthode doit commencer par `/theory`.
-
+### Une méthode formelle pour transformer une intention humaine en action traçable
 
 ## Ce qu’est ce dépôt
 
-Ce dépôt définit une méthode permettant de transformer une intention humaine
-en un plan exécutable et traçable.
+Ce dépôt définit une **méthode formelle de structuration de l’action** permettant de transformer une intention humaine floue en un plan exécutable, traçable et vérifiable.
+
+Il ne s’agit ni :
+
+* d’un framework logiciel,
+* ni d’un outil automatisé,
+* ni d’un gestionnaire de tâches.
+
+C’est une **méthode d’ingénierie de l’intention**, applicable à tout projet complexe : logiciel, produit, recherche, organisation.
+
+---
+
+## Problème traité
+
+Une intention humaine est par nature :
+
+* ambiguë,
+* instable dans le temps,
+* sujette à dérive (goal drift),
+* difficilement vérifiable a posteriori.
+
+La question centrale traitée ici est :
+
+> **À quelles conditions une intention humaine peut-elle être considérée comme exécutable, puis exécutée sans perte de sens ?**
+
+---
+
+## Architecture conceptuelle
 
 La méthode repose sur la composition stricte de trois opérateurs :
-- φ : clarification de l’intention
-- κ : compilation en plan d’exécution
-- ε : exécution contrôlée à l’aide d’une planification par fichiers
 
-L’architecture formelle de la méthode est définie dans
-[ARCHITECTURE.md](./ARCHITECTURE.md).
+```
+I ──φ──▶ C ──κ──▶ F ──ε──▶ E
+```
 
----
+* **I** — Intention brute (texte humain non fiable)
+* **C** — Contrat de Sprint (objet structuré et validable)
+* **F** — Plan exécutable (`task_plan.md`)
+* **E** — Exécution traçable (`findings.md`, `progress.md`)
 
-# Pipeline de clarification de l’intention
+Composition globale :
 
-## Vue d’ensemble
+```
+M = ε ∘ κ ∘ φ
+```
 
-### 1. La Trinité du Contrat de Sprint (Items 1, 2, 3)
-
-Le Contrat de Sprint (C) n’est plus une simple intention, mais un objet composé
-de trois sous-objets stabilisés :
-
-- **ITEM 1 — GOAL (Le But)**  
-  Pour être *non interprétable*, il doit impérativement suivre la syntaxe  
-  **Action + Objet + Preuve**.  
-  Un but est jugé stable s’il peut être validé par un tiers en moins de
-  deux minutes, sans explication orale.
-
-- **ITEM 2 — SPRINT BACKLOG (Le Périmètre)**  
-  Il ne s’agit plus d’une liste d’idées, mais d’une décomposition du Goal
-  en unités de transformation.  
-  La règle d’or est la **bijection stricte** :
-  un item de backlog correspond exactement à une phase dans `task_plan.md`.
-
-- **ITEM 3 — DEFINITION OF DONE (La Validation)**  
-  Elle définit comment décider que le sprint est terminé via un **ET logique strict**
-  entre plusieurs critères.  
-  Chaque critère doit être associé à une preuve binaire et typée
-  (URL, commande, artefact, dépôt ou validation humaine).
+L’architecture complète est définie dans [`ARCHITECTURE.md`](./ARCHITECTURE.md).
 
 ---
 
-### 2. L’algorithme de scoring : le filtre *a priori*
+## Les trois opérateurs
 
-L’une des innovations majeures de la méthode est l’introduction
-d’un algorithme de scoring permettant d’évaluer la qualité du contrat
-avant toute exécution.
+### φ — Clarification de l’intention
 
-- **μ(ambiguïté)**  
-  Mesure la proportion de zones interprétables.  
-  Si ce score est ≥ 0.5, le contrat est considéré comme *non compilable*
-  et l’exécution ne doit pas démarrer.
+φ transforme une intention brute en un **Contrat de Sprint C**, composé de trois objets invariants :
 
-- **μ(validation)**  
-  Mesure la proportion de zones vérifiables sans discussion.  
-  Une validation est dite *robuste* si le score est ≥ 0.7.
+1. **GOAL**
+   Forme stricte : **Action + Objet + Preuve**
+   → validable par un tiers en moins de 2 minutes, sans explication orale.
 
-- **Indépendance mathématique**  
-  Ces deux scores ne sont pas opposés :
-  un contrat peut être très clair (peu ambigu)
-  mais difficile à vérifier (peu validable), et inversement.
+2. **SPRINT BACKLOG**
+   Décomposition du goal en unités de transformation.
+   → bijection stricte avec les phases du plan.
 
----
+3. **DEFINITION OF DONE (DoD)**
+   Critères de fin définis par un **ET logique strict**, chaque critère étant associé à une preuve typée.
 
-### 3. Enrichissement du mapping C → `task_plan.md`
-
-Le passage du contrat au plan suit désormais une logique
-de **projection vs génération** :
-
-- **Éléments projetés**  
-  Le Goal, le Backlog (ordre et cardinalité) et la Definition of Done
-  sont copiés strictement depuis le contrat C vers le plan d’exécution.
-
-- **Éléments générés (résidus d’exécution)**  
-  Les sections *Questions clés*, *Décisions prises* et *Erreurs rencontrées*
-  émergent durant l’action et ne doivent jamais rétroagir sur le contrat C,
-  afin d’éviter toute dérive d’objectif (*goal drift*).
-
-- **Commutativité**  
-  Le système garantit que toute réussite dans `task_plan.md`
-  est mathématiquement équivalente à la satisfaction du contrat initial.
+Ces éléments sont matérialisés dans le dossier `/contrat`.
 
 ---
 
-### 4. L’Artefact Maître et l’exécution (Quickstart)
+### κ — Compilation du contrat
 
-L’Artefact Maître synthétise l’ensemble du système en une vue unique,
-transformant une intention humaine non fiable
-en un bloc d’intention clarifiée (IC).
+κ compile le Contrat C en un plan exécutable `task_plan.md` :
 
-Le protocole de mise en œuvre suit un pipeline strict en cinq étapes :
+* une phase = un item de backlog,
+* aucun ajout conceptuel,
+* uniquement projection et reformulation opérationnelle.
 
-1. Création des trois fichiers piliers  
-   (`task_plan.md`, `findings.md`, `progress.md`)
-2. Planification des phases (3 à 7 phases maximum)
-3. Documentation continue via la **règle des 2 actions** :  
-   après deux opérations de recherche ou de navigation,
-   l’agent doit impérativement mettre à jour `findings.md`
-4. Récitation : relire le plan avant chaque décision majeure
-   pour maîtriser l’attention et éviter la dérive d’objectif
-5. Vérification : utiliser le script `check-complete.sh`
-   afin de s’assurer que toutes les phases sont à l’état *complete*
-   avant livraison
+Invariant clé :
+
+```
+|backlog| = |phases|
+```
 
 ---
 
-### 5. Protocole de résilience : le 3-Strike Error
+### ε — Exécution contrôlée
 
-Pour garantir que *l’échec est un signal et non une faute*,
-le système impose le protocole **3-Strike** consigné dans `task_plan.md` :
+ε applique une discipline d’exécution externe (*planning-with-files*) sans la redéfinir.
 
-- **Strike 1** : diagnostiquer et corriger
-- **Strike 2** : changer d’approche
-  (interdiction de répéter la même action)
-- **Strike 3** : remise en question globale des hypothèses
+L’exécution produit :
 
-**Escalade**  
-Si l’échec persiste après trois tentatives,
-l’agent doit s’arrêter et solliciter l’humain
-pour une éventuelle renégociation du contrat.
+* `findings.md` → découvertes, recherches, décisions,
+* `progress.md` → actions, preuves, erreurs,
+* statuts de phases dans `task_plan.md`.
 
-**Analogie**  
-Votre cockpit est devenu un système d’exploitation pour l’action.  
-Le Contrat est le code source (le *quoi*),  
-le Mapping est le compilateur qui génère le Plan
-(le binaire exécutable),  
-et l’Algorithme de Scoring est le vérificateur de syntaxe
-qui refuse de lancer le programme
-si les instructions sont trop floues
-pour être menées à bien.
+Une fois un sprint clôturé, ces artefacts sont **gelés**.
 
 ---
 
-## Concepts fondamentaux
+## Système de scoring (filtre a priori)
 
-## Système de scoring
+Avant toute compilation, le contrat C est évalué par deux mesures indépendantes :
 
-## Pipeline d’exécution
+### μ(ambiguïté)
 
-## Fichiers et artefacts
+Mesure la proportion de zones interprétables dans le contrat.
 
-## Statut
+* μ ≥ 0.5 → contrat **non compilable**
+* μ < 0.5 → compilation autorisée
+
+### μ(validation)
+
+Mesure la proportion de critères de DoD objectivement vérifiables.
+
+* μ ≥ 0.7 → validation robuste
+* μ < 0.7 → validation fragile
+
+Les seuils sont définis dans `theory/03_seuils_et_mesures.md`.
+
+---
+
+## Stratification du dépôt
+
+Le dépôt est strictement stratifié. Toute violation invalide la méthode.
+
+### 1. Theory (`/theory`)
+
+Documents invariants :
+
+* définitions,
+* axiomes,
+* règles,
+* seuils.
+
+Indépendants de tout sprint ou projet.
+
+### 2. Architecture
+
+* `ARCHITECTURE.md`
+
+Définit φ, κ, ε et leurs relations.
+
+### 3. Exécution
+
+* `task_plan.md`
+* `findings.md`
+* `progress.md`
+
+Artefacts **spécifiques à un sprint**, immuables une fois clôturés.
+
+### 4. Instanciation
+
+* `/contrat`
+* `/examples`
+
+Cas concrets, jetables, remplaçables.
+
+---
+
+## Démarrage rapide (Quickstart)
+
+1. Créer les trois fichiers d’exécution :
+
+   * `task_plan.md`
+   * `findings.md`
+   * `progress.md`
+
+2. Définir 3 à 7 phases dans `task_plan.md`.
+
+3. Pendant l’exécution :
+
+   * toute découverte → `findings.md`,
+   * toute action/progression → `progress.md`,
+   * mise à jour des statuts de phase.
+
+4. Appliquer :
+
+   * la règle des 2 actions,
+   * le protocole 3-strike,
+   * le test de reboot (5 questions).
+
+Le protocole détaillé est décrit dans [`quickstart.md`](./quickstart.md).
+
+---
+
+## Exemple minimal
+
+Le fichier [`examples/example_01_intent_to_execution.md`](./examples/example_01_intent_to_execution.md) démontre une exécution complète :
+
+* intention initiale,
+* clarification,
+* compilation,
+* exécution,
+* preuves de complétion.
+
+Un lecteur externe peut reconstruire toute la chaîne **sans explication orale**.
+
+---
+
+## Dépendance externe
+
+L’opérateur ε repose sur la discipline *planning-with-files* :
+
+* [https://github.com/OthmanAdi/planning-with-files](https://github.com/OthmanAdi/planning-with-files)
+
+Cette discipline n’est **pas re-implémentée**, seulement composée.
+
+---
+
+## État du projet
+
+* Méthode fonctionnelle sur cas minimal
+* Non encore testée sur des projets SaaS complexes
+* Outil automatisant φ non implémenté
+* Scoring μ formalisé mais non outillé
+
+Ce dépôt constitue une **base canonique**, pas une fin.
+
+---
+
+## Ce que ce dépôt n’est pas
+
+* ❌ Un outil magique d’IA
+* ❌ Un framework logiciel
+* ❌ Un gestionnaire de tâches
+* ❌ Un générateur automatique de projets
+
+C’est une **méthode formelle pour rendre l’action humaine compilable**.
