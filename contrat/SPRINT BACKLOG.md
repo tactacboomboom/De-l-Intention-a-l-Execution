@@ -1,5 +1,5 @@
 # SPRINT BACKLOG
 
-1. Define and validate the architecture of the method.
-2. Materialize the execution workflow with file-based planning.
-3. Publish a minimal example proving end-to-end coherence.
+1. Réaliser un audit linguistique complet (fichiers + segments) sur la branche.
+2. Définir un lexique français canonique (termes autorisés/interdits) et le figer.
+3. Traduire et harmoniser tous les documents selon le lexique, puis vérifier l’absence d’anglais.
