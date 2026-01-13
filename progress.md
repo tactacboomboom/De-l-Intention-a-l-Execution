@@ -24,12 +24,24 @@
     - `findings.md`
     - `progress.md`
 
+#### Phase 3 : Publish a minimal example proving end-to-end coherence
+- **Status :** complete
+- **Début :** [heure]
+- **Actions réalisées :**
+    - Reviewed example file for end-to-end coherence
+    - Verified traceability across README, architecture, and logs
+- **Fichiers modifiés/créés :**
+    - `examples/example_01_intent_to_execution.md`
+    - `findings.md`
+    - `progress.md`
+
 
 # 🧪 Résultats des Tests
 | Test                   | Entrée         | Attendu                 | Réel    | Status |
 | ---------------------- | -------------- | ----------------------- | ------- | ------ |
 | Architecture coherence | Repo structure | Matches ARCHITECTURE.md | Matches | ✅ PASS |
 | Context recovery | Repo state after interruption | Clear next action | Clear | ✅ PASS |
+| End-to-end coherence | Repo walkthrough | Full chain understandable | Yes  | ✅ PASS |
 
 
 # 📑 Journal des Erreurs
