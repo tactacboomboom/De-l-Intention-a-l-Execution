@@ -1,162 +1,159 @@
-# Quick Start Guide
+# Guide de démarrage rapide
 
-Follow these 5 steps to use the planning-with-files pattern.
+Suivez ces 5 étapes pour utiliser le modèle *planning-with-files*.
 
 ---
 
-## Step 1: Create Your Planning Files
+## Étape 1 : Créer les fichiers de planification
 
-**When:** Before starting any work on a complex task
+**Quand :** Avant de commencer tout travail sur une tâche complexe
 
-**Action:** Create all three files using the templates:
+**Action :** Créer les trois fichiers à l’aide des modèles :
 
-```bash
-# Option 1: Use the init script (if available)
+# Option 1 : Utiliser le script d’initialisation (s’il est disponible)
 ./scripts/init-session.sh
 
-# Option 2: Copy templates manually
-cp templates/task_plan.md task_plan.md
-cp templates/findings.md findings.md
-cp templates/progress.md progress.md
-```
+# Option 2 : Copier manuellement les modèles
+- cp templates/task_plan.md task_plan.md
+- cp templates/findings.md findings.md
+- cp templates/progress.md progress.md
 
-**Update:** Fill in the Goal section in `task_plan.md` with your task description.
+Mise à jour : Renseigner la section Objectif dans task_plan.md
+avec la description de votre tâche.
+___
+# Étape 2 : Planifier les phases
 
----
+Quand : Juste après la création des fichiers
 
-## Step 2: Plan Your Phases
+Action : Découper votre tâche en 3 à 7 phases dans task_plan.md
 
-**When:** Right after creating the files
+Exemple :
+### Phase 1 : Exigences et découverte
+- [ ] Comprendre l’intention utilisateur
+- [ ] Rechercher des solutions existantes
+- **Statut :** in_progress
 
-**Action:** Break your task into 3-7 phases in `task_plan.md`
+### Phase 2 : Implémentation
+- [ ] Écrire le code principal
+- **Statut :** pending
 
-**Example:**
-```markdown
-### Phase 1: Requirements & Discovery
-- [ ] Understand user intent
-- [ ] Research existing solutions
-- **Status:** in_progress
+Mise à jour :
 
-### Phase 2: Implementation
-- [ ] Write core code
-- **Status:** pending
-```
+task_plan.md : définir les phases
 
-**Update:**
-- `task_plan.md`: Define your phases
-- `progress.md`: Note that planning is complete
+progress.md : noter que la planification est terminée
+___
+# Étape 3 : Travailler et documenter
 
----
+Quand : Tout au long de la tâche
 
-## Step 3: Work and Document
+Action : Mettre à jour les fichiers au fil du travail :
 
-**When:** Throughout the task
+| Ce qui se produit                                 | Fichier à mettre à jour | Contenu à ajouter                                          |
+| ------------------------------------------------- | ----------------------- | ---------------------------------------------------------- |
+| Vous faites une recherche                         | `findings.md`           | Ajouter dans « Découvertes »                               |
+| Vous consultez 2 résultats (navigateur/recherche) | `findings.md`           | **MISE À JOUR OBLIGATOIRE** (règle des 2 actions)          |
+| Vous prenez une décision technique                | `findings.md`           | Ajouter dans « Décisions techniques » avec justification   |
+| Vous terminez une phase                           | `task_plan.md`          | Changer le statut : `in_progress` → `complete`             |
+| Vous terminez une phase                           | `progress.md`           | Journaliser les actions réalisées et les fichiers modifiés |
+| Une erreur survient                               | `task_plan.md`          | Ajouter dans le tableau « Erreurs rencontrées »            |
+| Une erreur survient                               | `progress.md`           | Ajouter dans le journal des erreurs avec horodatage        |
 
-**Action:** As you work, update files:
+Exemple de flux de travail :
+1. Recherche → Mise à jour de findings.md
+2. Recherche → Mise à jour de findings.md (2e fois — OBLIGATOIRE)
+3. Prise de décision → Mise à jour de « Décisions techniques » dans findings.md
+4. Implémentation → Mise à jour de « Actions réalisées » dans progress.md
+5. Fin de phase → Mise à jour du statut dans task_plan.md
+6. Fin de phase → Résumé de la phase dans progress.md
+___
+# Étape 4 : Relire avant les décisions
 
-| What Happens | Which File to Update | What to Add |
-|--------------|---------------------|-------------|
-| You research something | `findings.md` | Add to "Research Findings" |
-| You view 2 browser/search results | `findings.md` | **MUST update** (2-Action Rule) |
-| You make a technical decision | `findings.md` | Add to "Technical Decisions" with rationale |
-| You complete a phase | `task_plan.md` | Change status: `in_progress` → `complete` |
-| You complete a phase | `progress.md` | Log actions taken, files modified |
-| An error occurs | `task_plan.md` | Add to "Errors Encountered" table |
-| An error occurs | `progress.md` | Add to "Error Log" with timestamp |
+Quand : Avant de prendre des décisions majeures
+(automatique avec les hooks dans Claude Code)
 
-**Example workflow:**
-```
-1. Research → Update findings.md
-2. Research → Update findings.md (2nd time - MUST update now!)
-3. Make decision → Update findings.md "Technical Decisions"
-4. Implement code → Update progress.md "Actions taken"
-5. Complete phase → Update task_plan.md status to "complete"
-6. Complete phase → Update progress.md with phase summary
-```
+Action : Le hook PreToolUse lit automatiquement task_plan.md
+avant toute opération d’écriture, d’édition ou de commande Bash.
 
----
+Rappel manuel (si vous n’utilisez pas les hooks) :
+Avant toute décision importante, relisez task_plan.md
+afin de rafraîchir l’objectif.
 
-## Step 4: Re-read Before Decisions
+Pourquoi :
+Après de nombreux appels à des outils, l’objectif initial peut être oublié.
+La relecture le remet au premier plan.
+___
 
-**When:** Before making major decisions (automatic with hooks in Claude Code)
+# Étape 5 : Finaliser et vérifier
 
-**Action:** The PreToolUse hook automatically reads `task_plan.md` before Write/Edit/Bash operations
+Quand : Lorsque vous pensez que la tâche est terminée
 
-**Manual reminder (if not using hooks):** Before important choices, read `task_plan.md` to refresh your goals
+Action : Vérifier la complétion :
+1. Vérifier task_plan.md
+  Toutes les phases doivent avoir le statut complete
 
-**Why:** After many tool calls, original goals can be forgotten. Re-reading brings them back into attention.
+2. Vérifier progress.md
+  Toutes les phases doivent être journalisées avec les actions réalisées
 
----
+3. Lancer la vérification de complétion
+(si vous utilisez les hooks, cela se fait automatiquement) :
+./scripts/check-complete.sh
 
-## Step 5: Complete and Verify
+**Si ce n’est pas complet** :
+Le hook d’arrêt (ou le script) empêche l’arrêt.
+Poursuivez le travail jusqu’à ce que toutes les phases soient terminées.
 
-**When:** When you think the task is done
+**Si c’est complet** :
+Livrez votre travail !
+Les trois fichiers de planification documentent intégralement votre processus.
+___
+## Référence rapide : quand mettre à jour quel fichier
 
-**Action:** Verify completion:
+### `task_plan.md`
 
-1. **Check `task_plan.md`**: All phases should have `**Status:** complete`
-2. **Check `progress.md`**: All phases should be logged with actions taken
-3. **Run completion check** (if using hooks, this happens automatically):
-   ```bash
-   ./scripts/check-complete.sh
-   ```
-
-**If not complete:** The Stop hook (or script) will prevent stopping. Continue working until all phases are done.
-
-**If complete:** Deliver your work! All three planning files document your process.
-
----
-
-## Quick Reference: When to Update Which File
-
-```
-┌─────────────────────────────────────────────────────────┐
-│  task_plan.md                                            │
-│  Update when:                                            │
-│  • Starting task (create it first!)                      │
-│  • Completing a phase (change status)                    │
-│  • Making a major decision (add to Decisions table)     │
-│  • Encountering an error (add to Errors table)          │
-│  • Re-reading before decisions (automatic via hook)      │
-└─────────────────────────────────────────────────────────┘
-
-┌─────────────────────────────────────────────────────────┐
-│  findings.md                                             │
-│  Update when:                                            │
-│  • Discovering something new (research, exploration)    │
-│  • After 2 view/browser/search operations (2-Action!)   │
-│  • Making a technical decision (with rationale)          │
-│  • Finding useful resources (URLs, docs)                 │
-│  • Viewing images/PDFs (capture as text immediately!)   │
-└─────────────────────────────────────────────────────────┘
-
-┌─────────────────────────────────────────────────────────┐
-│  progress.md                                             │
-│  Update when:                                            │
-│  • Starting a new phase (log start time)                 │
-│  • Completing a phase (log actions, files modified)      │
-│  • Running tests (add to Test Results table)            │
-│  • Encountering errors (add to Error Log with timestamp)│
-│  • Resuming after a break (update 5-Question Check)     │
-└─────────────────────────────────────────────────────────┘
-```
+Mettre à jour lorsque :
+- La tâche démarre (le créer en premier)
+- Une phase est terminée (changement de statut)
+- Une décision majeure est prise
+- Une erreur est rencontrée
+- Relecture avant décision (automatique via hook)
 
 ---
 
-## Common Mistakes to Avoid
+### `findings.md`
 
-| Don't | Do Instead |
-|-------|------------|
-| Start work without creating `task_plan.md` | Always create the plan file first |
-| Forget to update `findings.md` after 2 browser operations | Set a reminder: "2 view/browser ops = update findings.md" |
-| Skip logging errors because you fixed them quickly | Log ALL errors, even ones you resolved immediately |
-| Repeat the same failed action | If something fails, log it and try a different approach |
-| Only update one file | The three files work together - update them as a set |
+Mettre à jour lorsque :
+- Une découverte est faite (recherche, exploration)
+- Après **2 consultations** navigateur/recherche (règle des 2 actions)
+- Une décision technique est prise (avec justification)
+- Des ressources utiles sont trouvées (URLs, documents)
+- Des images ou PDF sont consultés (capturer immédiatement en texte)
 
 ---
 
-## Next Steps
+### `progress.md`
 
-- See [examples/README.md](../examples/README.md) for complete walkthrough examples
-- See [workflow.md](workflow.md) for the visual workflow diagram
-- See [troubleshooting.md](troubleshooting.md) if you encounter issues
+Mettre à jour lorsque :
+- Une nouvelle phase commence (heure de début)
+- Une phase est terminée (actions réalisées, fichiers modifiés)
+- Des tests sont exécutés
+- Des erreurs surviennent (journal + horodatage)
+- Reprise après une pause (test des 5 questions)
+
+___
+Erreurs courantes à éviter
+| À ne pas faire                                               | À faire à la place                                  |
+| ------------------------------------------------------------ | --------------------------------------------------- |
+| Commencer sans créer `task_plan.md`                          | Toujours créer le plan en premier                   |
+| Oublier de mettre à jour `findings.md` après 2 consultations | Rappel : « 2 actions = mise à jour de findings.md » |
+| Ne pas journaliser une erreur corrigée rapidement            | Journaliser **toutes** les erreurs                  |
+| Répéter une action qui a échoué                              | Changer d’approche après échec                      |
+| Mettre à jour un seul fichier                                | Les trois fichiers fonctionnent ensemble            |
+___
+Étapes suivantes
+
+Voir examples/README.md pour des exemples complets de bout en bout
+
+Voir workflow.md pour le diagramme visuel du flux de travail
+
+Voir troubleshooting.md en cas de problème

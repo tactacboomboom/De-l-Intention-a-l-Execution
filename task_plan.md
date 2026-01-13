@@ -1,15 +1,15 @@
-# Task Plan
+# Plan d’exécution
 
-## Goal
-See contrat/GOAL.md
+## Objectif
+Voir `contrat/GOAL.md`
 
 ## Phases
-- Phase 1: Define and validate the architecture of the method. — Status: complete
-- Phase 2: Materialize the execution workflow with file-based planning. — Status: complete
-- Phase 3: Publish a minimal example proving end-to-end coherence. — Status: complete
+- Phase 1 : Définir et valider l’architecture de la méthode — Status: complete
+- Phase 2 : Matérialiser le flux d’exécution avec la planification par fichiers — Status: complete
+- Phase 3 : Publier un exemple minimal prouvant la cohérence de bout en bout — Status: complete
 
-## Key Questions
+## Questions clés
 
-## Decisions Made
+## Décisions prises
 
-## Errors Encountered
+## Erreurs rencontrées
