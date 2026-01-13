@@ -1,10 +1,10 @@
-# Theory
+# Théorie
 
-This directory contains invariant theoretical documents.
+Ce dossier contient les documents théoriques invariants de la méthode.
 
-These documents:
-- do not depend on a specific sprint
-- do not depend on execution artifacts
-- must remain valid regardless of the project context
+Ces documents :
+- ne dépendent d’aucun sprint particulier,
+- ne dépendent d’aucun artefact d’exécution,
+- doivent rester valides quel que soit le contexte du projet.
 
-They define the stable foundations of the method.
+Ils définissent les fondations stables de la méthode.
