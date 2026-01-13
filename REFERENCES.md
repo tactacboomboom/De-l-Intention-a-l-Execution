@@ -1,15 +1,15 @@
-# References
+# Références
 
-## planning-with-files (external dependency)
+## planning-with-files (dépendance externe)
 
-This method relies on the execution discipline defined in
-"planning-with-files" by Othman Adi.
+Cette méthode repose sur la discipline d’exécution définie dans
+**planning-with-files**, par Othman Adi.
 
-The original repository and its full documentation are available here:
+Le dépôt original ainsi que sa documentation complète sont disponibles ici :
 https://github.com/OthmanAdi/planning-with-files
 
-In particular, the execution phase ε follows the rules described in:
+En particulier, la phase d’exécution ε suit les règles décrites dans :
 https://github.com/OthmanAdi/planning-with-files/blob/master/docs/quickstart.md
 
-This repository does not reimplement planning-with-files.
-It composes with it.
+Ce dépôt ne réimplémente pas *planning-with-files*.
+Il s’y compose explicitement.
