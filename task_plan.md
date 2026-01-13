@@ -1,20 +1,15 @@
-# Plan d’exécution — Sprint Langue (FR)
+# Plan d’exécution
 
 ## Objectif
 Voir `contrat/GOAL.md`
 
 ## Phases
-- Phase 1 : Audit linguistique complet du dépôt — Status: complet
-- Phase 2 : Définition et gel du lexique français canonique — Status: complet
-- Phase 3 : Traduction et harmonisation selon le lexique — Status: pending
+- Phase 1 : Définir et valider l’architecture de la méthode — Status: complete
+- Phase 2 : Matérialiser le flux d’exécution avec la planification par fichiers — Status: complete
+- Phase 3 : Publier un exemple minimal prouvant la cohérence de bout en bout — Status: complete
 
 ## Questions clés
 
 ## Décisions prises
 
 ## Erreurs rencontrées
-
-## Règle de discipline (Sprint Langue)
-
-Aucune traduction ou modification de contenu n’est autorisée
-tant que la Phase 1 (audit) n’est pas marquée comme complete.
