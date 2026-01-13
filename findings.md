@@ -12,10 +12,10 @@
 
 
 # 🛠 Décisions Techniques
-| Décision                                                  | Rationnel (Pourquoi ?)                                              |
-| --------------------------------------------------------- | ------------------------------------------------------------------- |
-| ARCHITECTURE.md is the single source of truth for φ, κ, ε | Avoid duplication and ambiguity between README and method documents |
-| planning-with-files dependency localized in ε             | ε is the only operator relying on external execution discipline     |
+| Décision | Rationnel (Pourquoi ?) |
+|---------|------------------------|
+| Création d’un lexique canonique figé avant traduction | Éviter les traductions incohérentes et le pilotage automatique |
+
 
 # ⚠️ Issues & Blocages
 | Problème rencontré | Résolution / Piste |
