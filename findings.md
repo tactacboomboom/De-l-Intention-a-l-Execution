@@ -9,6 +9,8 @@
 - The combination of task_plan.md + progress.md + findings.md is sufficient
   to restore execution context after an interruption.
 - The 5-question reboot table provides a fast mental rehydration of the sprint state.
+- An external reader can reconstruct the full execution chain (φ → κ → ε)
+  using only README.md, ARCHITECTURE.md, and the example file.
 
 
 # 🛠 Décisions Techniques
