@@ -89,14 +89,13 @@ ___
 Quand : Lorsque vous pensez que la tâche est terminée
 
 Action : Vérifier la complétion :
+1. Vérifier task_plan.md
+  Toutes les phases doivent avoir le statut complete
 
-Vérifier task_plan.md
-Toutes les phases doivent avoir le statut complete
+2. Vérifier progress.md
+  Toutes les phases doivent être journalisées avec les actions réalisées
 
-Vérifier progress.md
-Toutes les phases doivent être journalisées avec les actions réalisées
-
-Lancer la vérification de complétion
+3. Lancer la vérification de complétion
 (si vous utilisez les hooks, cela se fait automatiquement) :
 ./scripts/check-complete.sh
 
