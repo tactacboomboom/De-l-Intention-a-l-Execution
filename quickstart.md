@@ -14,14 +14,14 @@ Suivez ces 5 étapes pour utiliser le modèle *planning-with-files*.
 ./scripts/init-session.sh
 
 # Option 2 : Copier manuellement les modèles
-cp templates/task_plan.md task_plan.md
-cp templates/findings.md findings.md
-cp templates/progress.md progress.md
+- cp templates/task_plan.md task_plan.md
+- cp templates/findings.md findings.md
+- cp templates/progress.md progress.md
 
 Mise à jour : Renseigner la section Objectif dans task_plan.md
 avec la description de votre tâche.
 ___
-Étape 2 : Planifier les phases
+# Étape 2 : Planifier les phases
 
 Quand : Juste après la création des fichiers
 
@@ -43,7 +43,7 @@ task_plan.md : définir les phases
 
 progress.md : noter que la planification est terminée
 ___
-Étape 3 : Travailler et documenter
+# Étape 3 : Travailler et documenter
 
 Quand : Tout au long de la tâche
 
@@ -67,7 +67,7 @@ Exemple de flux de travail :
 5. Fin de phase → Mise à jour du statut dans task_plan.md
 6. Fin de phase → Résumé de la phase dans progress.md
 ___
-Étape 4 : Relire avant les décisions
+# Étape 4 : Relire avant les décisions
 
 Quand : Avant de prendre des décisions majeures
 (automatique avec les hooks dans Claude Code)
@@ -84,7 +84,7 @@ Après de nombreux appels à des outils, l’objectif initial peut être oublié
 La relecture le remet au premier plan.
 ___
 
-Étape 5 : Finaliser et vérifier
+# Étape 5 : Finaliser et vérifier
 
 Quand : Lorsque vous pensez que la tâche est terminée
 
