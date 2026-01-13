@@ -18,3 +18,11 @@ Execution follows planning-with-files discipline:
 - findings are logged in `findings.md`
 - proofs are logged in `progress.md`
 - phases are marked complete once DoD criteria are met
+
+## Proof of completion
+
+This example corresponds to Sprint Phase 1–3 defined in task_plan.md.
+
+All phases are marked as complete and are traceable through:
+- findings.md
+- progress.md
