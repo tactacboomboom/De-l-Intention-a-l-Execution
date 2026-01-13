@@ -1,3 +1,20 @@
+## 📌 Source normative du dépôt
+
+La **source normative unique** de cette méthode est le dossier [`/theory`](./theory).
+
+Il contient :
+- les **définitions** formelles,
+- les **axiomes** non négociables,
+- les **règles opératoires**,
+- les **seuils et mesures de décision**.
+
+Tout autre document du dépôt (README, quickstart, exemples, templates, archives)
+est **dérivé**, **pédagogique** ou **historique**, et ne fait pas autorité
+en cas de divergence.
+
+Toute modification de la méthode doit commencer par `/theory`.
+
+
 ## Ce qu’est ce dépôt
 
 Ce dépôt définit une méthode permettant de transformer une intention humaine
