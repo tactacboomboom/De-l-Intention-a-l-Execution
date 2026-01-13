@@ -4,9 +4,10 @@
 See contrat/GOAL.md
 
 ## Phases
-- Phase 1: Define and validate the architecture of the method. — Status: complete
-- Phase 2: Materialize the execution workflow with file-based planning. — Status: complete
-- Phase 3: Publish a minimal example proving end-to-end coherence. — Status: complete
+- Phase 1: Audit linguistique (identifier tout ce qui n’est pas FR). — Status: pending
+- Phase 2: Définition du lexique canonique — Status: pending
+- Phase 3: Réécriture + harmonisation — Status: pending
+- Phase 4: Vérification finale + diff — Status: pending
 
 ## Key Questions
 
