@@ -1,18 +1,18 @@
 ## Ontologie minimale (fermée, générative)
 
-Objets:
+### Objets
 
-* **I**: texte brut (intention, contexte, contraintes, préférences)
-* **C**: contrat structuré (GOAL, BACKLOG, DoD)
-* **F**: plan exécutable (`task_plan.md`)
-* **E**: exécution traçable (updates `findings.md` + `progress.md` + statuts phases)
+- **I** : texte brut (intention, contexte, contraintes, préférences)
+- **C** : contrat structuré (GOAL, SPRINT_BACKLOG, DEFINITION_OF_DONE)
+- **F** : plan d’exécution (`task_plan.md`)
+- **E** : exécution traçable (mises à jour de `findings.md`, `progress.md` et statuts des phases)
 
-Artefacts:
+### Artefacts
 
-* `contrat/*.md`
-* `task_plan.md`
-* `findings.md`
-* `progress.md`
+- `contrat/*.md`
+- `task_plan.md`
+- `findings.md`
+- `progress.md`
 
 ---
 
@@ -20,150 +20,147 @@ Artefacts:
 
 ### 1) φ : Clarification
 
-**Type**
+#### Type
+- φ : 𝕀 → 𝕮
 
-* φ : 𝕀 → 𝕮
+#### Entrée (I)
+- Texte brut contenant au minimum : objectif vague + contexte + contraintes
 
-**Entrée (I)**
+#### Sortie (C)
+- `contrat/GOAL.md` : **Action + Objet + Preuve**
+- `contrat/SPRINT_BACKLOG.md` : liste d’items, chaque item correspondant à une transformation
+- `contrat/DEFINITION_OF_DONE.md` : critères en **ET logique**, avec preuves typées
 
-* Texte brut contenant au minimum : (objectif vague) + (contexte) + (contraintes)
+#### Règles de compilation (bornes)
+- Le GOAL doit être validable par un tiers en moins de deux minutes, sans explication orale
+- Le BACKLOG possède une cardinalité bornée (par exemple : 3 à 7 items)
+- Chaque critère de la DEFINITION OF DONE doit être formulé comme :
+  - un test binaire
+  - associé à un type de preuve explicite
 
-**Sortie (C)**
-
-* `contrat/GOAL.md` : **Action + Objet + Preuve**
-* `contrat/SPRINT_BACKLOG.md` : liste d’items, chacun = une transformation
-* `contrat/DEFINITION_OF_DONE.md` : critères en **ET** logique, preuves typées
-
-**Règles de compilation (bornes)**
-
-* GOAL validable par un tiers en <2 min, sans oral
-* BACKLOG cardinalité bornée (ex: 3–7 items)
-* DoD: chaque critère = (test binaire) + (type de preuve)
-
-**Preuve attachée**
-
-* Existence des 3 fichiers + format respecté (structure, pas contenu parfait)
+#### Preuve attachée
+- Existence des trois fichiers
+- Respect du format attendu (structure, indépendamment de la qualité du contenu)
 
 ---
 
-### 2) κ : Compilation C → F
+### 2) κ : Compilation de C vers F
 
-**Type**
+#### Type
+- κ : 𝕮 → 𝔽
 
-* κ : 𝕮 → 𝔽
+#### Entrée
+- Les trois composants du contrat C
 
-**Entrée**
+#### Sortie
+- `task_plan.md` contenant :
+  - une section `## Phases` avec **N phases**
+  - N égal à la cardinalité du SPRINT_BACKLOG (**bijection stricte**)
+  - chaque phase correspondant à un item de backlog reformulé en tâche actionnable
+  - un champ `Status` ∈ {pending, in_progress, complete}
+  - les sections `Questions clés`, `Décisions prises`, `Erreurs rencontrées`
+    (vides au moment de la compilation)
 
-* Les 3 composants de C
+#### Règles
+- **Projection** : le Goal, l’ordre du backlog et la Definition of Done sont copiés
+  ou référencés depuis C, sans invention
+- **Génération** : les questions, décisions et erreurs sont des résidus
+  d’exécution et n’appartiennent pas au contrat C
 
-**Sortie**
-
-* `task_plan.md` avec :
-
-  * section `## Phases` contenant **N phases**
-  * N = cardinalité du BACKLOG (**bijection stricte**)
-  * chaque phase = un item de backlog reformulé en tâche actionnable
-  * `Status` ∈ {pending, in_progress, complete}
-  * sections `Key Questions`, `Decisions Made`, `Errors Encountered` (vides au départ)
-
-**Règles**
-
-* Projection: Goal + ordre backlog + DoD sont copiés/référencés (pas inventés)
-* Génération: Questions/Décisions/Erreurs sont **résidus d’exécution** (pas dans C)
-
-**Preuve attachée**
-
-* Vérifier la bijection: `count(backlog_items) == count(phases)`
+#### Preuve attachée
+- Vérification de la bijection :
+  `count(backlog_items) == count(phases)`
 
 ---
 
-### 3) ε : Exécution contrôlée (PwF)
+### 3) ε : Exécution contrôlée (planning-with-files)
 
-**Type**
+#### Type
+- ε : 𝔽 → 𝔼
 
-* ε : 𝔽 → 𝔼
+#### Entrée
+- `task_plan.md` avec des phases à l’état `pending`
 
-**Entrée**
+#### Sortie (E)
+- Une trace d’exécution telle que :
+  - `findings.md` contient des entrées datées ou structurées
+  - `progress.md` contient des preuves (liens, commandes, captures, artefacts)
+  - toutes les phases passent à l’état `complete` avec des preuves associées
 
-* `task_plan.md` (phases en pending)
+#### Règles opérationnelles
+- **Règle des 2 actions** :
+  après deux actions de recherche ou de navigation,
+  mise à jour obligatoire de `findings.md`
+- **Règle des 3 échecs (3-strike error)** :
+  à la troisième itération infructueuse, escalade vers l’humain
+- **Relecture** :
+  relire le plan avant toute décision majeure
+  afin d’éviter la dérive d’objectif (*goal drift*)
 
-**Sortie (E)**
+#### Preuve attachée
+- Le plan est entièrement à l’état `complete`
+- Les preuves correspondantes sont présentes dans `progress.md`
 
-* Une trace telle que:
+#### Dépendance externe
 
-  * `findings.md` contient des entrées datées ou structurées
-  * `progress.md` contient des preuves (liens, commandes, captures, artefacts)
-  * toutes les phases passent à `complete` avec preuves associées
+L’opérateur ε repose sur la discipline d’exécution définie dans
+**planning-with-files**, par Othman Adi.
 
-**Règles opérationnelles**
-
-* Règle des 2 actions: après 2 actions de recherche/navigation → update `findings.md`
-* 3-strike error: à la 3e itération d’échec → escalade humain
-* Relecture: relire plan avant décision majeure (anti drift)
-
-**Preuve attachée**
-
-* Le plan est “complete” + preuves présentes dans `progress.md`
-
-**External dependency**
-
-The operator ε relies on the execution discipline defined in
-"planning-with-files" by Othman Adi.
-
-See:
+Références :
 - https://github.com/OthmanAdi/planning-with-files
 - https://github.com/OthmanAdi/planning-with-files/blob/master/docs/quickstart.md
 
-This repository does not reimplement planning-with-files.
-It composes with it.
-
+Ce dépôt ne réimplémente pas *planning-with-files*.
+Il s’y compose explicitement.
 
 ---
 
 ## Invariants (rendus explicites)
 
-* M = ε ∘ κ ∘ φ
-* κ est bijectif sur la structure: backlog ↔ phases
-* ε n’a pas le droit de rétroagir sur C (anti goal drift)
+- **M = ε ∘ κ ∘ φ**
+- κ est bijectif sur la structure : backlog ↔ phases
+- ε n’a pas le droit de rétroagir sur C (anti dérive d’objectif)
 
 ---
 
 ## Axes de variation
 
-* Qualité initiale de I (flou → précis)
-* Taille de backlog (3–7 recommandé)
-* Rigueur DoD (faible → typée et binaire)
-* Discipline d’exécution (faible → stricte)
+- Qualité initiale de I (flou → précis)
+- Taille du backlog (3 à 7 recommandé)
+- Rigueur de la Definition of Done (faible → typée et binaire)
+- Discipline d’exécution (faible → stricte)
 
 ---
 
-## Topologie (où ça vit dans ton repo)
+## Topologie (localisation dans le dépôt)
 
-* Spécification: `contrat/`
-* Plan: `task_plan.md`
-* Run logs: `findings.md`, `progress.md`
+- Spécification : `contrat/`
+- Plan : `task_plan.md`
+- Journaux d’exécution : `findings.md`, `progress.md`
 
-## Stratification invariant
+---
 
-This method is strictly stratified into four non-overlapping layers:
+## Invariant de stratification
 
-1. Theory (`/theory`)
-   - Invariant documents defining the foundations of the method.
-   - Must not depend on any sprint, execution, or project-specific context.
+Cette méthode est strictement stratifiée en quatre couches non superposables :
 
-2. Architecture (`ARCHITECTURE.md`)
-   - Defines the operators φ, κ, ε and their composition.
-   - Bridges theory and execution.
-   - Changes rarely and deliberately.
+1. **Théorie** (`/theory`)
+   - Documents invariants définissant les fondations de la méthode
+   - Ne doivent dépendre d’aucun sprint, d’aucune exécution
+     ni d’aucun contexte de projet spécifique
 
-3. Execution (`task_plan.md`, `findings.md`, `progress.md`)
-   - Sprint-specific artifacts.
-   - Immutable once a sprint is closed.
-   - Record events, not rules.
+2. **Architecture** (`ARCHITECTURE.md`)
+   - Définit les opérateurs φ, κ, ε et leur composition
+   - Fait le lien entre théorie et exécution
+   - Évolue rarement et de manière délibérée
 
-4. Instantiation (`/contrat`, `/examples`)
-   - Project- and sprint-specific realizations.
-   - Fully disposable and replaceable.
+3. **Exécution** (`task_plan.md`, `findings.md`, `progress.md`)
+   - Artefacts spécifiques à un sprint
+   - Immuables une fois le sprint clôturé
+   - Enregistrent des événements, pas des règles
 
-Violation of this stratification invalidates the method.
+4. **Instanciation** (`/contrat`, `/examples`)
+   - Réalisations spécifiques à un projet ou à un sprint
+   - Entièrement jetables et remplaçables
 
+Toute violation de cette stratification invalide la méthode.
