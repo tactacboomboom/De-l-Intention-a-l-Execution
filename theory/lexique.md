@@ -7,10 +7,12 @@ Format obligatoire dans findings.md :
 - [IA] ...
   [H] (Pourquoi j’accepte / pourquoi c’est mieux)
 
-## Termes canoniques (à compléter)
-- Contrat de Sprint
-- Plan d’exécution
-- Découvertes (findings)
-- Preuves (progress)
-- Phase
-- Critère de validation
+## Termes canoniques
+
+| Terme français canonique | Terme(s) interdit(s) | Justification |
+|--------------------------|---------------------|---------------|
+| Contrat de Sprint        | Sprint Contract     | Aligné avec la terminologie française et le rôle juridique du document |
+| Plan d’exécution         | Task Plan            | Met l’accent sur l’exécution plutôt que la planification abstraite |
+| Découvertes              | Findings             | Terme français simple, mémorisable |
+| Preuves                  | Progress             | Met l’accent sur la vérification, pas l’avancement |
+| Phase                    | Phase (EN usage)     | Identique mais sémantique française |
