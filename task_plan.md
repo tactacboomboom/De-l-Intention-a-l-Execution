@@ -5,7 +5,7 @@ Voir `contrat/GOAL.md`
 
 ## Phases
 - Phase 1 : Audit linguistique complet du dépôt — Status: complet
-- Phase 2 : Définition et gel du lexique français canonique — Status: pending
+- Phase 2 : Définition et gel du lexique français canonique — Status: complet
 - Phase 3 : Traduction et harmonisation selon le lexique — Status: pending
 
 ## Questions clés
