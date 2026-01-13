@@ -6,6 +6,10 @@
 # 🔍 Research Findings
 - Planning-with-files requires that execution artifacts (findings, progress) record events, not rules.
   Source: https://github.com/OthmanAdi/planning-with-files/blob/master/docs/quickstart.md
+- The combination of task_plan.md + progress.md + findings.md is sufficient
+  to restore execution context after an interruption.
+- The 5-question reboot table provides a fast mental rehydration of the sprint state.
+
 
 # 🛠 Décisions Techniques
 | Décision                                                  | Rationnel (Pourquoi ?)                                              |
@@ -17,3 +21,4 @@
 | Problème rencontré                                     | Résolution / Piste                       |
 | ------------------------------------------------------ | ---------------------------------------- |
 | Ambiguity about where to reference planning-with-files | Dependency localized inside ε definition |
+| Uncertainty about next action after interruption | Reboot test clarifies current phase and next step |
