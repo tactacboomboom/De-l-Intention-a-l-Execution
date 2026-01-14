@@ -1,45 +1,71 @@
-# Findings & Decisions (Mémoire de Travail)
+# Progress Log : Chaîne Intention → Artefacts Transmissibles
 
-## 🎯 Requirements & Contraintes
-- Séparer strictement le sujet S (corpus transmissible)
-  de la méthode de gestion De-l-Intention-à-l-Exécution.
-- Travailler simultanément sur deux dépôts distincts :
-  - Repo S : contenu transmissible du sujet.
-  - Repo M : pilotage, traçabilité et preuves d’exécution.
-- Respecter l’arborescence définie par « Faire un REPO GitHub Optimal.md ».
-- Appliquer strictement les phases φ / κ / ε sans saut d’étape.
+## 📅 Session du : 2026-01-14
 
-## 🔍 Research Findings (Découvertes)
-- La confusion initiale entre sujet et contrainte de production
-  entraîne des ambiguïtés structurelles dans le contrat.
-- La traçabilité d’exécution (progress.md) doit être mise à jour
-  avant toute avancée supplémentaire dans Repo S.
-- La méthode De-l-Intention-à-l-Exécution impose que toute action
-  exécutée soit immédiatement attestée par une preuve factuelle.
+### Suivi des Phases (Chronologique)
 
-**Pointeurs :**
-- Repo M : `contrat/GOAL.md`, `contrat/SPRINT_BACKLOG.md`, `contrat/DEFINITION_OF_DONE.md`
-- Repo M : `task_plan.md`, `progress.md`
-- Repo S : `01_ONTOLOGY/`
+#### Phase 1 : Ontologie minimale du sujet S
+- **Status :** complete
+- **Début :** 13:40
+- **Actions réalisées :**
+    - Création du glossaire des termes canoniques.
+    - Définition des objets de l’ontologie minimale.
+    - Définition des relations opératoires entre les objets.
+    - Formalisation des invariants du système.
+    - Définition des axes de variation compatibles avec les invariants.
+- **Fichiers modifiés/créés :**
+    - `01_ONTOLOGY/glossary.md`
+    - `01_ONTOLOGY/objects.md`
+    - `01_ONTOLOGY/relations.md`
+    - `01_ONTOLOGY/invariants.md`
+    - `01_ONTOLOGY/axes_variation.md`
 
-## 🛠 Décisions Techniques
+---
 
-| Décision | Rationnel (Pourquoi ?) |
-| :------- | :--------------------- |
-| Séparation Repo S / Repo M | Éviter toute confusion entre contenu transmis et méthode de pilotage |
-| Traçabilité obligatoire avant poursuite | Garantir la cohérence φ / κ / ε |
-| Utilisation de templates stricts | Éviter les dérives et les refactors ultérieurs |
+#### Phase 2 : Logique opératoire & point d’entrée lecteur
+- **Status :** complete
+- **Début :** 14:00
+- **Actions réalisées :**
+    - Formalisation de la logique opératoire de transformation.
+    - Correction du typage de l’opérateur (O abstrait, IA comme implémentation possible).
+    - Mise en conformité stricte du point d’entrée du dépôt (`00_START_HERE`).
+- **Fichiers modifiés/créés :**
+    - `02_METHOD/logic_operatoire.md`
+    - `00_START_HERE/00_map.md`
+    - `00_START_HERE/01_quickstart_action.md`
+    - `00_START_HERE/02_quickstart_validation.md`
 
-## ⚠️ Issues & Blocages
+---
 
-| Problème rencontré | Résolution / Piste |
-| :----------------- | :----------------- |
-| Avance non tracée dans Repo S | Pause de l’exécution et synchronisation via `progress.md` |
-| Ambiguïté initiale du GOAL | Reformulation stricte Action / Objet / Preuve |
+## 🧪 Résultats des Tests
 
-## 🖼 Observations Visuelles / Browser
-- Observation de l’interface GitHub :
-  la création de dossiers via `Add file → Create new file`
-  impose une attention particulière au chemin du fichier.
-- Vérification manuelle de la cohérence de l’arborescence
-  après chaque commit dans Repo S.
+| Test | Entrée | Attendu | Réel | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| Vérification ontologie minimale | Repo S | Objets, relations, invariants présents | Conforme | ✅ PASS |
+| Vérification axes de variation | Repo S | Axes sans violation d’invariants | Conforme | ✅ PASS |
+| Présence point d’entrée normé | Repo S | Lecteur guidé sans oral | Conforme | ✅ PASS |
+
+---
+
+## 📑 Journal des Erreurs (Log)
+
+| Timestamp | Erreur | Tentative n° | Résolution / Mutation |
+| :--- | :--- | :--- | :--- |
+| 13:10 | Confusion sujet / méthode | 1 | Séparation explicite Repo S / Repo M |
+| 13:25 | Avance non tracée dans Repo S | 1 | Arrêt + synchronisation via progress.md |
+| 14:20 | Typage ambigu de l’opérateur | 1 | Passage explicite à O abstrait |
+| 14:40 | Arborescence incomplète | 1 | Ajout du triptyque `00_START_HERE` |
+
+---
+
+## 🔄 Test de Reboot (5 Questions)
+
+| Question | Réponse | Source |
+| :-------------------- | :------------------------------------------- | :------------- |
+| **Où en suis-je ?** | Phase 2 terminée | task_plan.md |
+| **Où vais-je ?** | Phase 3 — Invariants et axes (consolidation) | task_plan.md |
+| **Quel est le but ?** | Publier un repo transmissible (PASS / FAIL) | contrat/GOAL.md |
+| **Qu'ai-je appris ?** | Le point d’entrée est une condition de transmissibilité | findings.md |
+| **Qu'ai-je fait ?** | Ontologie + logique + entrée lecteur conformes | progress.md |
+
+==• **Reprise de travail :** Ce tableau permet de restaurer le contexte du projet en moins de deux minutes.==
