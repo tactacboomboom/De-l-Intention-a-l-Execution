@@ -1,16 +1,20 @@
 # GOAL
 
 ## Action
-Structurer et publier un corpus transmissible dont le sujet est :
-« Construire une chaîne de transformation de l’intention humaine en artefacts transmissibles,
-avec l’IA comme opérateur intermédiaire sous contrainte ».
+Publier.
 
 ## Objet
-Un dépôt GitHub (Repo S) contenant le corpus du sujet,
-structuré selon l’arborescence de « Faire un REPO GitHub Optimal.md ».
+Un dépôt GitHub (Repo S) dont le sujet est :
+« Construire une chaîne de transformation de l’intention humaine
+en artefacts transmissibles, avec l’IA comme opérateur intermédiaire sous contrainte »,
+structuré conformément à l’arborescence
+« Faire un REPO GitHub Optimal.md ».
 
 ## Preuve
-Un lecteur externe peut reconstruire le sujet sans explication orale
-en suivant les chemins de lecture du Repo S et en obtenant :
-- au moins un exemple minimal complet,
-- au moins un test pass/fail concluant.
+Un lecteur externe, sans explication orale,
+peut décider de manière binaire (PASS / FAIL)
+si le dépôt est transmissible,
+en s’appuyant sur :
+- au moins un exemple complet,
+- au moins un test explicite de transmissibilité,
+présents dans le dépôt.
