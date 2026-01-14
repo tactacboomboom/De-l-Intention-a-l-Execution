@@ -19,6 +19,11 @@
   avant toute avancée supplémentaire dans Repo S.
 - La méthode De-l-Intention-à-l-Exécution impose que toute action
   exécutée soit immédiatement attestée par une preuve factuelle.
+- La transmissibilité dépend autant de l’ordre de lecture proposé
+  que du contenu conceptuel lui-même.
+- Des trajectoires cognitives explicites réduisent fortement
+  le risque de rejet et de mauvaise interprétation.
+
 
 **Pointeurs :**
 - Repo M : `contrat/GOAL.md`, `contrat/SPRINT_BACKLOG.md`, `contrat/DEFINITION_OF_DONE.md`
