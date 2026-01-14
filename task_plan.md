@@ -23,12 +23,12 @@ Voir `contrat/GOAL.md`
 - **Statut :** complete
 
 ### Phase 5 — Exemple complet
-- [ ] Produire un exemple complet cohérent avec le corpus, sans concept nouveau, dans Repo S.
-- **Statut :** pending
+- [X] Production d’un exemple minimal traversant toute la chaîne intention → artefact → validation.
+- **Statut :** complete
 
 ### Phase 6 — Test binaire de transmissibilité
-- [ ] Définir un protocole de test PASS/FAIL utilisable par un tiers, dans Repo S.
-- **Statut :** pending
+- [X] Définition d’un protocole PASS/FAIL utilisable par un tiers sans explication orale.
+- **Statut :** complete
 
 ## Décisions prises
 
