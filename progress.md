@@ -6,7 +6,7 @@
 
 #### Phase 1 : Ontologie minimale du sujet S
 - **Status :** complete
-- **Début :** 13:40
+- **Début :** 15:02
 - **Actions réalisées :**
     - Création du glossaire des termes canoniques.
     - Définition des objets et relations de l’ontologie minimale.
