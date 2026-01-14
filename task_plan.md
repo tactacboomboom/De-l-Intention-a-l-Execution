@@ -14,12 +14,13 @@ Voir `contrat/GOAL.md`
 - **Statut :** complete
 
 ### Phase 3 — Invariants et axes de variation
-- [ ] Extraire invariants et axes de variation du système dans Repo S.
-- **Statut :** pending
+- [X] Invariants et axes définis dans la phase ontologique initiale.
+- **Statut :** complete
+- **Note :** Phase absorbée par la Phase 1 (ontologie minimale).
 
 ### Phase 4 — Trajectoire cognitive transmissible
-- [ ] Construire un ordre de lecture optimisé + seuils de stabilité dans Repo S.
-- **Statut :** pending
+- [X] Construction explicite de chemins de lecture action-first, structure-first et audit-first.
+- **Statut :** complete
 
 ### Phase 5 — Exemple complet
 - [ ] Produire un exemple complet cohérent avec le corpus, sans concept nouveau, dans Repo S.
