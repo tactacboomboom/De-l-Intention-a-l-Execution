@@ -6,7 +6,7 @@ Voir `contrat/GOAL.md`
 ## Phases
 
 ### Phase 1 — Ontologie minimale du sujet S
-- [ ] Produire l’ontologie minimale (objets, relations, invariants) dans Repo S.
+- [X] Produire l’ontologie minimale (objets, relations, invariants) dans Repo S.
 - **Statut :** pending
 
 ### Phase 2 — Logique opératoire de transformation
