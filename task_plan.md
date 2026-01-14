@@ -10,8 +10,8 @@ Voir `contrat/GOAL.md`
 - **Statut :** complete
 
 ### Phase 2 — Logique opératoire de transformation
-- [ ] Formaliser la logique reliant intention, contrainte, IA, artefact transmissible dans Repo S.
-- **Statut :** pending
+- [X] Formaliser la logique reliant intention, contrainte, opérateur, artefact transmissible dans Repo S.
+- **Statut :** complete
 
 ### Phase 3 — Invariants et axes de variation
 - [ ] Extraire invariants et axes de variation du système dans Repo S.
