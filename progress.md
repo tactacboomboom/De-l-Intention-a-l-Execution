@@ -6,7 +6,7 @@
 
 #### Phase 1 : Ontologie minimale du sujet S
 - **Status :** complete
-- **Début :** 13:40
+- **Début :** 15:02
 - **Actions réalisées :**
     - Création du glossaire des termes canoniques.
     - Définition des objets de l’ontologie minimale.
@@ -24,7 +24,7 @@
 
 #### Phase 2 : Logique opératoire & point d’entrée lecteur
 - **Status :** complete
-- **Début :** 14:00
+- **Début :** 16:20
 - **Actions réalisées :**
     - Formalisation de la logique opératoire de transformation.
     - Correction du typage de l’opérateur (O abstrait, IA comme implémentation possible).
