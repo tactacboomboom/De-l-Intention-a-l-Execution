@@ -24,6 +24,12 @@
 - Des trajectoires cognitives explicites réduisent fortement
   le risque de rejet et de mauvaise interprétation.
 
+## Apprentissage clé (Phase 5–6)
+Un dépôt n’est transmissible que s’il contient :
+- au moins un exemple complet,
+- au moins un test explicite,
+indépendamment de la qualité conceptuelle du reste du corpus.
+
 
 **Pointeurs :**
 - Repo M : `contrat/GOAL.md`, `contrat/SPRINT_BACKLOG.md`, `contrat/DEFINITION_OF_DONE.md`
