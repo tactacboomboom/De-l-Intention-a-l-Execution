@@ -34,6 +34,7 @@
     - `00_START_HERE/00_map.md`
     - `00_START_HERE/01_quickstart_action.md`
     - `00_START_HERE/02_quickstart_validation.md`
+---
 
 #### Phase 4 : Trajectoire cognitive transmissible
 - **Status :** complete
@@ -47,6 +48,27 @@
     - `05_PATHS/path_practitioner.md`
     - `05_PATHS/path_expert.md`
 
+---
+
+#### Phase 5 : Exemple complet
+- **Status :** complete
+- **Début :** 18:20
+- **Actions réalisées :**
+    - Création d’un exemple minimal sans concept nouveau.
+    - Traversée complète Intention → Contraintes → Opérateur → Artefact → Évaluation.
+- **Fichiers créés :**
+    - `03_EXAMPLES/E01_minimal.md`
+
+---
+
+#### Phase 6 : Test binaire de transmissibilité
+- **Status :** complete
+- **Début :** 18:35
+- **Actions réalisées :**
+    - Formalisation d’un protocole PASS/FAIL autonome.
+    - Alignement strict avec le GOAL.
+- **Fichiers créés :**
+    - `04_TESTS/T01_pass_fail.md`
 ---
 
 ## 🧪 Résultats des Tests
